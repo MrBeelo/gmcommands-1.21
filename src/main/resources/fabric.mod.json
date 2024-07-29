@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "gmcommands",
+	"version": "${version}",
+	"name": "GM Commands",
+	"description": "Simple and lightweight mod that adds /gm commands.",
+	"authors": [
+		"MrBeelo"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT License",
+	"icon": "assets/gmcommands/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.mrbeelo.gmcommands.GMcommands"
+		],
+		"client": [
+			"net.mrbeelo.gmcommands.GMcommandsClient"
+		]
+	},
+	"mixins": [
+		"gmcommands.mixins.json",
+		{
+			"config": "gmcommands.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
